@@ -22,6 +22,19 @@ const Form = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(formData);
+
+    
+    const validateForm = () => {
+        const errors = {}
+        
+        if(!formData.name) {
+            errors.name = 'Name is required'
+        }
+        if (!formData.email) {
+            errors.email = "Email is required.";
+          } else if (!/^\S+@\S+.\S+$/.test(formData.email)) {
+            errors.email = "Email format is invalid.";
+    }
   };
 
   return (
